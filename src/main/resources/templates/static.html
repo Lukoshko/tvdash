@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 30%;
+        }
+
+        body {
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body bgcolor="#A0BEC4">
+
+<input type="button" value="Reload Page" onClick="document.location.reload(true)">
+<div th:utext="${date + ' ' + dayOfWeek + ' ' + time}"></div>
+
+
+<div class="row">
+    <div class="column">
+        <p>
+            <span>Habits</span>
+        </p>
+        <table>
+            <tbody>
+            <tr th:each="habit : ${habits}">
+                <td>
+                    <div th:utext='${habit.status}'></div>
+                </td>
+                <td th:text="${habit.text}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="column">
+        <p>
+            <span>Daily</span>
+        </p>
+        <table>
+            <tbody>
+            <tr th:each="daily : ${dailys}">
+                <td>
+                    <div th:utext='${daily.status}'></div>
+                </td>
+                <td th:text="${daily.text}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="column">
+        <p>
+            <span>Todo</span>
+        </p>
+        <table>
+            <tbody>
+            <tr th:each="todo : ${todos}">
+                <td>
+                    <div th:utext='${todo.status}'></div>
+                </td>
+                <td th:text="${todo.text}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+
+</html>
