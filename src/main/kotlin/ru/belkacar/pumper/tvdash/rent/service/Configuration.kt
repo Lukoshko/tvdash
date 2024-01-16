@@ -11,7 +11,7 @@ class Configuration {
     @Bean
     fun restTemplate(builder: RestTemplateBuilder): RestTemplate {
         return builder
-            .setConnectTimeout(Duration.ofMillis(3000))
+            .setConnectTimeout(Duration.ofMillis(10000))
             .setReadTimeout(Duration.ofMillis(10000))
             .defaultHeader("x-client", "12345678-90ab-416b-cdef-1234567890ab - One Spell to Rule Them All")
             .defaultHeader("x-api-user", "9d1576db-e881-4477-b017-ad4c9bb2512e")
