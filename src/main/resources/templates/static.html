@@ -20,11 +20,9 @@
     </style>
 </head>
 
-<body bgcolor="#A0BEC4">
+<body bgcolor="#2e2e2e" text="#7d7d7d">
 
-<input type="button" value="Reload Page" onClick="document.location.reload(true)">
-<div th:utext="${date + ' ' + dayOfWeek + ' ' + time}"></div>
-
+<div th:utext="${date + ' ' + dayOfWeek}"></div>
 
 <div class="row">
     <div class="column">
